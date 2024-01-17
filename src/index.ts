@@ -2214,7 +2214,7 @@ function FlatpickrInstance(
 
 
     if (document.body.style.position === "fixed") {
-       var bodyTop = parseFloat(document.body.style.top.replace(/\D/g,''));
+       var bodyTop = Math.abs(parseFloat(document.body.style.top));
        top += bodyTop;
     }
 
