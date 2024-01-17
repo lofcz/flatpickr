@@ -2207,10 +2207,17 @@ function FlatpickrInstance(
           distanceFromBottom < calendarHeight &&
           inputBounds.top > calendarHeight);
 
-    const top =
+    let top =
       window.pageYOffset +
       inputBounds.top +
       (!showOnTop ? positionElement.offsetHeight + 2 : -calendarHeight - 2);
+
+
+    if (document.body.style.position === "fixed") {
+       var bodyTop = parseFloat(document.body.style.top.replace(/\D/g,''));
+       top += bodyTop;
+    }
+
 
     toggleClass(self.calendarContainer, "arrowTop", !showOnTop);
     toggleClass(self.calendarContainer, "arrowBottom", showOnTop);
