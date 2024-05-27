@@ -1630,7 +1630,7 @@ function FlatpickrInstance(
       !(e.relatedTarget && isCalendarElem(e.relatedTarget as HTMLElement))
     ) {
       self.setDate(
-          getInputValue(self._input),
+        getInputValue(self._input),
         true,
         e.target === self.altInput
           ? self.config.altFormat
@@ -2569,7 +2569,7 @@ function FlatpickrInstance(
       self.config.defaultDate ||
       ((self.input.nodeName === "INPUT" ||
         self.input.nodeName === "TEXTAREA") &&
-          getInputValue(self.input));
+        getInputValue(self.input));
 
     if (preloadedDate) setSelectedDate(preloadedDate, self.config.dateFormat);
 
@@ -2609,11 +2609,10 @@ function FlatpickrInstance(
         self.config.maxDate.getSeconds() > 0);
   }
 
-  function getInputValue(input: HTMLInputElement) : string{
-    return input.placeholder &&
-    input.value === input.placeholder
-        ? ''
-        : input.value;
+  function getInputValue(input: HTMLInputElement): string {
+    return input.placeholder && input.value === input.placeholder
+      ? ""
+      : input.value;
   }
 
   function setupInputs() {
