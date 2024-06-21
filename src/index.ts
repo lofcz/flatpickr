@@ -308,8 +308,8 @@ function FlatpickrInstance(
             : self.config.minDate!;
 
         hours = Math.max(hours, minTime.getHours());
-        if (hours === minTime.getHours() && minutes < minTime.getMinutes()) {
-          minutes = minTime.getMinutes();
+        if (hours === minTime.getHours()) {
+          minutes = Math.max(minTime.getMinutes(), minTime.getMinutes());
           
           if (minutes === minTime.getMinutes())
             seconds = Math.max(seconds, minTime.getSeconds());
