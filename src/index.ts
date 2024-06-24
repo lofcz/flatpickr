@@ -310,7 +310,7 @@ function FlatpickrInstance(
         hours = Math.max(hours, minTime.getHours());
         if (hours === minTime.getHours()) {
           minutes = Math.max(minutes, minTime.getMinutes());
-          
+
           if (minutes === minTime.getMinutes())
             seconds = Math.max(seconds, minTime.getSeconds());
         }
