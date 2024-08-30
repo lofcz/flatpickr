@@ -1736,6 +1736,9 @@ function FlatpickrInstance(
 
         case 38:
         case 40:
+          if ((eventTarget as HTMLElement).tagName === "SELECT") {
+            break;
+          }
           e.preventDefault();
           const delta = e.keyCode === 40 ? 1 : -1;
           if (
