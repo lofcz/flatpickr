@@ -526,8 +526,9 @@ function FlatpickrInstance(
       }
     } catch (e) {
       /* istanbul ignore next */
-      e.message = "Invalid date supplied: " + jumpTo;
-      self.config.errorHandler(e);
+      const error = e as Error;
+      error.message = "Invalid date supplied: " + jumpTo;
+      self.config.errorHandler(error);
     }
 
     if (triggerChange && self.currentYear !== oldYear) {
@@ -2324,7 +2325,7 @@ function FlatpickrInstance(
 
     if (
       window.navigator.userAgent.indexOf("MSIE") !== -1 ||
-      navigator.msMaxTouchPoints !== undefined
+      navigator.maxTouchPoints !== undefined
     ) {
       // hack - bugs in the way IE handles focus keeps the calendar open
       setTimeout(self.close, 0);
